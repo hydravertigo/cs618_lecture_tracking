@@ -3,8 +3,10 @@ import { CreatePost } from '../components/CreatePost.jsx'
 import { PostFilter } from '../components/PostFilter.jsx'
 import { PostSorting } from '../components/PostSorting.jsx'
 import { Header } from '../components/Header.jsx'
+import { Helmet } from 'react-helmet-async'
 import { useQuery } from '@tanstack/react-query'
 import { getPosts } from '../api/posts.js'
+//import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 export function Blog() {
@@ -18,6 +20,13 @@ export function Blog() {
   const posts = postsQuery.data ?? []
   return (
     <div style={{ padding: 8 }}>
+      <Helmet>
+        <title>Full-Stack React Blog</title>
+        <meta
+          name='description'
+          content='A blog full of articles about full-stack React development.'
+        />
+      </Helmet>
       <Header />
       <br />
       <hr />
