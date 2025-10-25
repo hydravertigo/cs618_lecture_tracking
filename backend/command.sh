@@ -14,5 +14,5 @@
 
 ## Module 10
 
-npm install graphql@16.8.1 @apollo/server@4.10.0
+#npm install graphql@16.8.1 @apollo/server@4.10.0
 

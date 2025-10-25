@@ -12,4 +12,8 @@
 
 # Check module 08 for missing commands
 
-npm install victory@36.9.1
+#npm install victory@36.9.1
+
+# module 10
+
+npm install @apollo/client@3.9.5 graphql@16.8.1
