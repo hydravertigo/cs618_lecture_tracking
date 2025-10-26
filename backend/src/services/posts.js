@@ -13,14 +13,17 @@ async function listPosts(
 ) {
   return await Post.find(query).sort({ [sortBy]: sortOrder })
 }
+
 export async function listAllPosts(options) {
   return await listPosts({}, options)
 }
+
 export async function listPostsByAuthor(authorUsername, options) {
   const user = await User.findOne({ username: authorUsername })
   if (!user) return []
   return await listPosts({ author: user._id }, options)
 }
+
 export async function listPostsByTag(tags, options) {
   return await listPosts({ tags }, options)
 }
