@@ -19,16 +19,17 @@ export function Blog() {
   const [author, setAuthor] = useState('')
   const [sortBy, setSortBy] = useState('createdAt')
   const [sortOrder, setSortOrder] = useState('descending')
-  /*
-  const postsQuery = useQuery({
-	 queryKey: ['posts', { author, sortBy, sortOrder }],
-	 queryFn: () => getPosts({ author, sortBy, sortOrder }),
+
+  const postsQuery = useGraphQLQuery(author ? GET_POSTS_BY_AUTHOR : GET_POSTS, {
+    variables: { author, options: { sortBy, sortOrder } },
   })
-  const posts = postsQuery.data ?? []
-  */
+
+  /*
   const postsQuery = useGraphQLQuery(author ? GET_POSTS_BY_AUTHOR : GET_POSTS, {
     variables: { options: { sortBy, sortOrder } },
   })
+  */
+
   const posts = postsQuery.data?.postsByAuthor ?? postsQuery.data?.posts ?? []
 
   return (
